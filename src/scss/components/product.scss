@@ -1,0 +1,66 @@
+.product {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &__img-wrapper {
+        position: relative;
+        padding-top: 130%;
+        overflow: hidden;
+    }
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        object-fit: cover;
+        transition: .3s;
+    }
+    &__title {
+        @include fluid(12, 20, 'font-size');
+    }
+    &__price {
+        @include fluid(12, 18, 'font-size');
+        opacity: .45;
+    }
+    &__colors {
+        display: flex;
+        gap: 7px;
+        margin-top: 5px;
+    }
+    &__color {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+    }
+    &__like {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        padding: 6px;
+        opacity: .5;
+        transition: .3s;
+        & path {
+            stroke: transparent;
+            fill: black;
+        }
+        @include any-hover {
+            opacity: 1;
+        }
+    }
+    @include any-hover {
+        opacity: 1;
+        text-decoration: none;
+        .product {
+            &__img {
+                transform: scale(1.05);
+            }
+        }
+    }
+}

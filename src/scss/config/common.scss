@@ -1,89 +1,142 @@
-// Заголовки, общие БЄМ блоки и проче...
-body {
-    background: linear-gradient(to bottom, #0C0707 70%, #270909 100%);
-    font-family: 'Inter', sans-serif;
-    color: white;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: white;
+.uk-sticky-placeholder {
+    position: absolute;
 }
 
 a {
-    color: white;
+    color: inherit;
+    text-decoration: underline;
     transition: .2s;
-    &:hover, &:focus {
-        color: white;
+    &:hover, :focus {
+        color: inherit;
         opacity: .7;
-        text-decoration: none;
     }
 }
 
-.social {
-    display: flex;
-    gap: 15px;
-    &__icon {}
+body {
+    font-family: 'PPPangramSansRounded', sans-serif;
+    color: black;
 }
 
-.code {
-    background: #202020;
-    border-radius: 20px;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 300;
+}
+
+.burger {
     display: flex;
     flex-direction: column;
-    &__header {
-        background: #191919;
-        border-bottom: 1px solid #252525;
-        padding: 15px 20px;
-        border-radius: 20px 20px 0 0;
+    gap: 5px;
+    cursor: pointer;
+    transition: .2s;
+    &__line {
+        background-color: white;
+        height: 2px;
+        width: 25px;
+        transition: .2s;
     }
-    &__title {}
-    &__body {
-        background: #191919;
-        border: 1px solid #252525;
-        margin: 15px 20px;
-        padding: 10px 15px;
-        border-radius: 10px;
-        position: relative;
-        cursor: pointer;
-        &:hover {
-            .code {
-                &__copy {
-                    opacity: .6;
-                }
-            }
-        }
-    }
-    &__text {
-        margin: 0;
-        font-size: 16px;
-        font-family: 'Inika';
-    }
-    &__copy {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        opacity: 0;
-        transition: .3s;
-        &:hover {
-            opacity: 1 !important;
-        }
+    @include any-hover {
+        opacity: .7;
     }
 }
 
-main {
+.lang {
+    font-size: 20px;
+    color: white;
     display: flex;
     align-items: center;
+    gap: 7px;
+    &__text {
+        text-decoration: none;
+        transition: .3s;
+        opacity: .5;
+        &_current {
+            opacity: 1;
+        }
+    }
+    &__separator {
+        width: 2px;
+        height: 18px;
+        position: relative;
+        top: 2px;
+        border-radius: 5px;
+        background-color: white;
+        transition: .3s;
+    }
 }
 
-.uk-notification {
-    width: 300px;
-    margin-left: -150px;
-}
-
-.uk-notification-message {
-    background-color: #191919;
-    color: white;
-    border-radius: 20px;
+.btn {
+    border-radius: 100px;
+    border: 1px solid black;
+    padding: 10px 25px;
     font-size: 16px;
+    background-color: white;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    cursor: pointer;
+    @include any-hover {
+        background-color: rgba(0, 0, 0, .3);
+    }
+    &_fill {
+        border: none;
+        background-color: rgba(255, 255, 255, .35);
+        @include any-hover {
+            background-color: rgba(255, 255, 255, .65);
+        }
+    }
+}
+
+.swiper-pagination {
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background-color: white;
+        margin: 0 10px !important;
+        transition: .3s;
+    }
+    &_black {
+        .swiper-pagination-bullet {
+            background-color: black;
+        }
+    }
+}
+
+.nav-button {
+    width: 10px;
+    height: 16px;
+    
+    filter: invert(1);
+    &::after {
+        content: none;
+    }
+    &_prev {
+        background: url('@img/icons/arrow-left.svg') no-repeat 50% 50%;
+        background-size: contain;
+        left: -15px;
+    }
+    &_next {
+        background: url('@img/icons/arrow-right.svg') no-repeat 50% 50%;
+        background-size: contain;
+        right: -15px;
+    }
+    &_white {
+        filter: invert(0);
+    }
+}
+
+.section-title {
+    @include fluid(24, 28, 'font-size');
+    font-family: 'Unbounded', sans-serif;
+    text-align: center;
+    color: black;
+    font-weight: 300;
+}
+
+.title {
+    @include fluid(24, 28, 'font-size');
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 300;
+    color: white;
 }

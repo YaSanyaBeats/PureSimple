@@ -1,0 +1,27 @@
+.about {
+    margin-top: 100px;
+    &__title {
+        margin-bottom: 30px;
+    }
+    &__container {
+        position: relative;
+    }
+    &__swiper {}
+    &__swiper-wrapper {
+    }
+    &__swiper-pagination {
+        bottom: -40px !important;
+    }
+    &__slide {
+        @include fluid(400, 600, 'width');
+        height: auto;
+    }
+    &__nav-button {
+        &_prev {
+            left: 25px;
+        }
+        &_next {
+            right: 25px;
+        }
+    }
+}

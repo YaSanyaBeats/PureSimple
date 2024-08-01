@@ -1,12 +1,100 @@
 .header {
-    margin: 60px 0;
+    padding: 30px 0;
+    transition: .3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     &__container {
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
+    }
+    &__left {
+        display: flex;
         align-items: center;
+        gap: 20px;
     }
+    &__burger {}
+    &__icon {
+        width: 22px;
+        height: 22px;
+        color: white;
+        cursor: pointer;
+        fill: transparent;
+        transition: .2s;
+        @include any-hover {
+            opacity: .7;
+        }
+    }
+    &__lang {
+        position: relative;
+        bottom: 2px;
+    }
+    &__center {}
     &__logo {
-        font-size: 16px;
+        width: 240px;
+        transition: .3s;
+        & path {
+            transition: .3s;
+        }
     }
-    &__social {}
+    &__right {
+        display: flex;
+        gap: 25px;
+        margin-left: 35px;
+    }
+    &.uk-active {
+        background-color: white;
+        padding: 20px 0;
+        & .header {
+            &__icon {
+                color: black;
+                stroke: black;
+                & path, circle {
+                    color: black;
+                    stroke: black;
+                }
+                &_like {
+                    & path {
+                        fill: black;
+                        stroke: transparent;
+                    }
+                    
+                }
+                &_cart {
+                    & path {
+                        stroke-opacity: .75;
+                    }
+                }
+                &_search {
+                    fill: black;
+                }
+            }
+            &__logo {
+                width: 160px;
+                & path {
+                    fill: black;
+                }
+            }
+            &__burger {
+                .burger__line {
+                    background-color: black;
+                }
+            }
+            &__lang {
+                .lang__text {
+                    color: black;
+                }
+                .lang__separator {
+                    background-color: black;
+                }
+            }
+        }
+        
+        
+    }
 }
+
+

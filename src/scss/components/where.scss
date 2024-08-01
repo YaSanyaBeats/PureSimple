@@ -1,0 +1,71 @@
+.where {
+    margin-top: 100px;
+    &__container {}
+    &__title {
+        margin-bottom: 30px;
+    }
+    &__swiper {
+        overflow: visible;
+    }
+    &__slide {
+        width: 600px;
+        height: auto;
+        padding: 70px 15px 150px 15px;
+        transition: .3s;
+        overflow: hidden;
+        &.swiper-slide-active {
+            & .where {
+                &__overlay {
+                    backdrop-filter: blur(0px);
+                }
+                &__card {
+                    transform: scale(1.2);
+                }
+            }
+            
+        }
+    }
+    &__card {
+        position: relative;
+        z-index: 2;
+        padding-top: 40%;
+        padding-bottom: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s;
+        text-align: center;
+        height: 100%;
+    }
+    &__card-title {
+        position: relative;
+    }
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        
+    }
+    &__text {
+        @include fluid(15, 24, 'font-size');
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin-top: 90px;
+    }
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.25);
+        transition: .3s;
+        backdrop-filter: blur(5px);
+    }
+}

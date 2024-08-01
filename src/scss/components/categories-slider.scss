@@ -1,0 +1,11 @@
+.categories-slider {
+    margin-top: 100px;
+    &__container {
+        position: relative;
+    }
+    &__swiper {}
+    &__nav-button {
+        &_prev {}
+        &_next {}
+    }
+}

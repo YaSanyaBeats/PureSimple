@@ -1,0 +1,43 @@
+.gallery {
+    margin-top: 100px;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    &__title {
+        margin-bottom: 10px;
+    }
+    &__inst {
+        @include fluid(18, 20, 'font-size');
+        margin-bottom: 30px;
+        text-decoration: none;
+        @include any-hover {
+            text-decoration: none;
+        }
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+        width: 100%;
+    }
+    &__link {
+        position: relative;
+        padding-top: 100%;
+        &_mobile {
+            display: none;
+        }
+    }
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
